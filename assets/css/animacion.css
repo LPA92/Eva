@@ -1,0 +1,64 @@
+/* Nos sirve para ahcer diferentes animaciones
+binker -> nombre que le doy al keyframe 
+Al 50% del frame pasamos a opacidad cero*/
+@keyframes blinker {
+    50% { opacity: 1; }
+}
+
+.blink {
+    /* duracion 1sg tipo de animación linear, duración infinita
+    -webkit-animation: google chrome y safary
+    -moz-animation: mozilla firexfox
+    -o-animation: opera
+    */
+
+    -webkit-animation: blinker 1s linear infinite;
+    -moz-animation: blinker 1s linear infinite;
+    -o-animation: blinker 1s linear infinite;    
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes grow-and-shrink {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.efecto {
+    animation: grow-and-shrink 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+.entrada {
+        -webkit-animation: slidein 1s linear ;
+        -moz-animation: slidein 1s linear;
+        -o-animation: slidein 1s linear ;
+        animation: slidein 1s linear;
+}
+
+/* eliminar en futuras versiones de Reflex */
+:root, .light, .light-theme {
+    --color-page-background: #0c151d ! important;
+
+}
