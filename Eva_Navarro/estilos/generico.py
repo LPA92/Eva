@@ -63,7 +63,7 @@ class Tamanyo(Enum):
     BG = '2.25em',
     VB = '2.50em',
     EB = '2.75em'
-    UB = '3.00em', 
+    UB = '7.00em',
 
 # Estilos Genéricos a aplicar en toda la página web
 ESTILO_GENERICO = {
@@ -75,22 +75,11 @@ ESTILO_GENERICO = {
 
     # Todos los botones van a tener el mismo estilo
     rx.button: {
-        # Para ocupar todo el ancho disponible
-        'width': '100%',
-        # Para ocupar toda la altura disponible
-        'height':'100%',
-        # Definimos el radio del borde
-        'border_radius':Tamanyo.DF.value,
+
         # Definimos el color del texto en los botones
-        'color': TextoColor.CABEZA.value,
+        'color': TextoColor.NAV.value,
         # Definimos el color de fondo de todos los botones
-        'background_color': Color.CONTENIDO.value,
-
-        # Si no entra en una línea, nos aparezca en dos líneas
-        'white_space': 'normal',
-        # Para alinear el texto al principio de la página web
-        'text_align': 'start',
-
+        'background_color': Color.FONDO.value,
         # Definimos el color de fondo del botón al pasar el ratón
         '_hover': {
         'background_color': Color.SECUNDARIO.value,
@@ -115,8 +104,15 @@ navbar_titulo_estilo = dict(
     # Peso de la fuente
     font_weight = Trazo.NEGRITA.value,
     # Tamaño de la fuente del botón
-    font_size = Tamanyo.DF.value,
+    font_size = Tamanyo.L.value,
     color = TextoColor.NAV.value,
+)
+
+estilo_imagen_NAV = dict(
+    # Establecemos el ancho de la imagen
+    width = Tamanyo.L.value,
+    # Definimos la altura de la imagen
+    height = Tamanyo.L.value,
 )
 
 # Texto del título que especifica a un bloque de enlaces
@@ -135,7 +131,7 @@ negrita = dict(
     # Establecemos el color de la fuente para el span
     color = TextoColor.CUERPO.value,
     # Definimos el tamaño de la fuente para todo lo que contiene el box
-    font_size = Tamanyo.L.value,
+    font_size = Tamanyo.M.value,
     # El texto ocupa el 100% de la pantalla
     width = '100%',
     # Coloca en el centro los diferentes componentes
@@ -151,7 +147,7 @@ normal = dict(
     # Establecemos el color de la fuente para el span
     color = TextoColor.CUERPO.value,
     # Definimos el tamaño de la fuente para todo lo que contiene el box
-    font_size = Tamanyo.L.value,
+    font_size = Tamanyo.M.value,
     # El texto ocupa el 100% de la pantalla
     width = '100%',
     # Coloca en el centro los diferentes componentes
@@ -159,19 +155,46 @@ normal = dict(
 )
 
 pie_comun = dict(
+    # Establecemos que el texto ocupe el 100% de la pantalla
+    width = '100%',    
+    # Centramos el texto verticalmente
+    text_align = 'center',
     # Definimos el tamaño de la letra
-    font_size = Tamanyo.DF.value,
+    font_size = Tamanyo.L.value,
+    # Definimos el colr del texto del pie de página
+    color = TextoColor.PIE.value,
+        
+    
     # Establecemos el margen superior del pie de página
     margin_top =Tamanyo.ZERO.value,
-    # El texto ocupa el 100% de la pantalla
-    width = '100%',
+    # Especificamos el margen inferior
+    margin_bottom = Tamanyo.BG.value,
+
+    # Dentro del rx.flex()
+    # Distribuye los elementos equitativamente con espacios entre ellos   
+    justify = "between",        
     # Coloca en el centro los diferentes componentes
-    align='center',     
+    align='center',
+
+    
+    # Dejamos una sepación entre los diferentes componentes
+    spacing='2',
+
+    # Ponemos un relleno a la derecha del componente
+    padding_x = Tamanyo.XS.value,
+
 )
 
-
-
-
+estilo_imagen_PIE = dict(
+    # Establecemos el ancho de la imagen
+    width = Tamanyo.L.value,
+    # Definimos la altura de la imagen
+    height = Tamanyo.L.value,
+    # Centramos la imagen
+    align = 'center',
+    # Establecemos un margen para la imagen
+    # margin = Tamanyo.M.value,
+)
 
 # Texto del botón
 # dict = Diccionario
@@ -186,37 +209,12 @@ boton_titulo_estilo = dict(
     margin_top = Tamanyo.XXS.value,
 )
 
-estilo_imagen_NAV = dict(
-    # Establecemos el ancho de la imagen
-    width = Tamanyo.DF.value,
-    # Definimos la altura de la imagen
-    height = Tamanyo.DF.value,
-    # Centramos la imagen
-    align = 'center',
-    # Establecemos un margen para la imagen
-    margin = Tamanyo.M.value    
-)
-
-estilo_imagen_PIE = dict(
-    # Establecemos el ancho de la imagen
-    width = Tamanyo.S.value,
-    # Definimos la altura de la imagen
-    height = Tamanyo.S.value,
-    # Centramos la imagen
-    align = 'center',
-    # Establecemos un margen para la imagen
-    margin = Tamanyo.M.value
-)
-
 estilo_imagen_VISTA = dict(
     # Establecemos el ancho de la imagen
-    width = Tamanyo.UB.value,
+    width = '80%',
     # Definimos la altura de la imagen
-    height = Tamanyo.UB.value,
+    height = 'auto',
     # Centramos la imagen
-    align = 'center',
-    # Establecemos un margen para la imagen
-    margin = Tamanyo.M.value
 )
 
 # cuerpo del botón
@@ -225,9 +223,56 @@ boton_cuerpo_estilo = dict(
     # Peso de la fuente
     font_weight = Trazo.NORMAL.value,
     # Tamaño de la fuente del botón
-    font_size = Tamanyo.DF.value,
+    font_size = Tamanyo.L.value,
     # Color del texto del botón
     color = TextoColor.CUERPO.value,
     # Margen del botón
-    margin_buttom = Tamanyo.XXL.value,
+    margin_buttom = Tamanyo.XL.value,
+)
+
+estilo_Navegacion = dict(
+    
+    ### PARA FIJAR BARRA DE NAVEGACIÓN AL INICIO DE LA PÁGINA ###
+    #  Para fijar la posición position='sticky', top='0' y z_index = '999' 
+    position = 'sticky',
+    # Se queda fija arriba del todo de la página web
+    top='0',
+    # Para asegurarnos de que permanece en la parte superior
+    z_index = '999',
+
+    # CARACTERISTICAS DEL rx.flex()
+    # direction=row Alinea verticalmete,direction=column Alinea horizontalmente,
+    align='center',
+    # direction=row Alinea horizontalmente,direction=column Alinea verticialmente,
+    justify="center",
+    # Si ponemos los rx en filas (row) o en columnas (column)
+    direction='row',
+    # Dejamos una sepación entre la imagen y el hipervinculo
+    spacing='2',
+    
+    # COLOR, PADDING, MARGIN,
+    
+    # Color de fondo 
+    bg = Color.CONTENIDO.value,
+    
+    # Ponemos un espacio de BG [2,25em (36px)] alrededor del texto en el eje x
+    padding_x = Tamanyo.BG.value,
+    # Ponemos un espacio de DF [1em (16px)] alrededor del texto en el eje y
+    padding_y = Tamanyo.DF.value,
+
+    # margen Inferior
+    margin_botton = Tamanyo.VB.value,
+)
+
+Pagina = dict(
+    # Limitamos el ancho de la página a 80em definido en generico.py
+    max_width = MAX_ANCHO,
+    # limitamos el alto de la página a 45em definido en generico.py                    
+    max_height = MAX_ALTO,
+    # Para que ocupe el 100% lo que hay dentro del vstack
+    width="100%",
+    # Dejamos un margen de 1.25em en el eje y
+    margin_y=Tamanyo.M.value,
+    # Colocamos un relleno de 1.25em alrededor de la página
+    padding=Tamanyo.M.value
 )

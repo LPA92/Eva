@@ -16,9 +16,10 @@ def vistahttps() -> rx.Component:
         rx.hstack(
             # Pone la imagen Servicios.svg
             imagen(
-                src = '/svg/https.svg',
+                '/svg/https.svg',
                 # Si no carga la imagen nos sale el texto definido en alt
-                alt='Imagen de páginas externas',
+                'Imagen de páginas externas',
+                '100%',
             ),
             rx.box(     
                 # Creamos una caja flexible parea alterar sus dimnensiones y llenar el espacio disponible

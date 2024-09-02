@@ -26,8 +26,9 @@ def vistainicio() -> rx.Component:
         rx.hstack(
             # Pone la imagen Justicia.svg
             imagen(
-                src = '/svg/Justicia.svg',
-                alt='Imagen de Justicia',
+                '/svg/Justicia.svg',
+                'Imagen de Justicia',
+                '30%',
             ),
             rx.box(     
                 # Creamos una caja flexible parea alterar sus dimnensiones y llenar el espacio disponible
@@ -69,6 +70,8 @@ def vistainicio() -> rx.Component:
                         ),    
                     ),
                 ),
+                # Para separar la imagen del texto
+                margin_left = Tamanyo.XXL.value
             ),
         ),            
     ),  

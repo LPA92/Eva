@@ -13,8 +13,6 @@
 
 # Importamos reflex
 import reflex as rx
-# Importamos las imagenes
-import Eva_Navarro.componentes.imagenes as imagen
 
 # Importamos los tamaños
 from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo

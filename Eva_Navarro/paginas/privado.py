@@ -3,6 +3,8 @@ import reflex as rx
 # Importamos las utilidades
 import Eva_Navarro.meta as meta
 
+# Importamos las rutas
+from Eva_Navarro.rutas import Rutas as ruta
 # Página de navegación
 from Eva_Navarro.componentes.navegacion import navegacion
 # Contenido de la página de inicio
@@ -13,13 +15,14 @@ from Eva_Navarro.componentes.pie import pie
 
 # Estamos definiendo que el archivo index.py es una página de la web
 @rx.page(
+    route = ruta.PRIVADO.value,
     # Solo admite una cadena alfanumérica.
-    title = 'Página de Area Privada',
+    title = 'Area Privada',
     # Solo admite una cadena alfanumérica.
-    description='Esta es la página de area privada de la procuradora Eva Maria Navarro',
-    image='/svg/Password.svg',
+    description = 'Esta es el área privada de la Procuradora Eva Navarro',
+    image = meta.imagen_privado,
     # meta = Permite añadir o definido en otro archivo
-    meta = meta.indice_meta,
+    meta = meta.privado_meta,
 )
 
 # Añadimos los componentes que se van a ver en la página principal

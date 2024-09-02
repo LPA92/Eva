@@ -16,9 +16,10 @@ def vistapartido() -> rx.Component:
         rx.hstack(
             # Pone la imagen Justicia.svg
             imagen(
-                src = '/svg/Partidos.svg',
+                '/svg/Partidos.svg',
                 # Si no carga la imagen nos sale el texto definido en alt
-                alt='Imagen de Partidos Judiciales',
+                'Imagen de Partidos Judiciales',
+                '100%'
             ),
             rx.box(     
                 # Creamos una caja flexible parea alterar sus dimnensiones y llenar el espacio disponible

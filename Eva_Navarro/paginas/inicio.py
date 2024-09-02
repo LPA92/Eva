@@ -5,6 +5,8 @@ import Eva_Navarro.meta as meta
 # Iportamos los estilos
 import Eva_Navarro.estilos.generico as comun
 
+# Importamos las rutas
+from Eva_Navarro.rutas import Rutas as ruta
 # Importamos los tamaños
 from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo 
 # Página de navegación
@@ -17,13 +19,14 @@ from Eva_Navarro.componentes.pie import pie
 
 # Estamos definiendo que el archivo inicio.py es una página de la web
 @rx.page(
+    route = ruta.INDEX.value,
     # Solo admite una cadena alfanumérica.
-    title = 'Página de inicio',
+    title = 'Eva Mª Navarro',
     # Solo admite una cadena alfanumérica.
-    description='Esta es la página de inicio de la Procuradora Eva Navarro',
-    image='/svg/Logo_Procurador.svg',
+    description = 'Esta es la página de inicio de la Procuradora Eva Navarro',
+    image = meta.imagen_inicio,
     # meta = Permite añadir o definido en otro archivo
-    meta = meta.indice_meta,
+    meta = meta.inicio_meta,
     
 )
 
@@ -33,19 +36,14 @@ def index() -> rx.Component:
     return rx.box(
         # Idioma de la página
         meta.lenguaje(),
-        # Menu de Navegación
-        navegacion(),
-        vistainicio(),
-        # Pie de página
-        pie(),
-        # Limitamos el ancho de la página a 80em definido en generico.py
-        max_width=comun.MAX_ANCHO,
-        # limitamos el alto de la página a 45em definido en generico.py
-        max_height = comun.MAX_ALTO,
-        # Para que ocupe el 100% lo que hay dentro del vstack
-        width='100%',
-        # dejamos un margen de 1.25em en el eje y
-        margin_y=Tamanyo.XXL,
-        # Ponemos todos los textos al margén izquierdo de la pantalla
-        align='center',      
+            # Menu de Navegación
+            navegacion(),
+            rx.center(
+                rx.vstack(            
+                    vistainicio(),
+                    style = comun.Pagina,
+                ),
+            ),
+            # Pie de página
+            pie(),
     ),

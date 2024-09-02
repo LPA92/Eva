@@ -16,8 +16,9 @@ def vistaservicio() -> rx.Component:
         rx.hstack(
             # Pone la imagen Servicios.svg
             imagen(
-                src = '/svg/Servicios.svg',
-                alt='Imagen de Servicios Procuradora',
+                '/svg/Servicios.svg',
+                'Imagen de Servicios Procuradora',
+                '100%',
             ),
             rx.box(     
                 # Creamos una caja flexible parea alterar sus dimnensiones y llenar el espacio disponible

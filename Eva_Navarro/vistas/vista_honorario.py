@@ -16,9 +16,10 @@ def vistahonorario() -> rx.Component:
         rx.hstack(
             # Pone la imagen Justicia.svg
             imagen(
-                src = '/svg/Honorarios.svg',
+                '/svg/Honorarios.svg',
                 # Si no carga la imagen nos sale el texto definido en alt
-                alt='Imagen de honorarios',
+                'Imagen de honorarios',
+                '100%'
             ),
             rx.box(     
                 # Creamos una caja flexible parea alterar sus dimnensiones y llenar el espacio disponible

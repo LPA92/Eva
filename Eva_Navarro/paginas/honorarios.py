@@ -3,6 +3,8 @@ import reflex as rx
 # Importamos las utilidades
 import Eva_Navarro.meta as meta
 
+# Importamos las rutas
+from Eva_Navarro.rutas import Rutas as ruta
 # Página de navegación
 from Eva_Navarro.componentes.navegacion import navegacion
 # Contenido de la página de inicio
@@ -13,13 +15,14 @@ from Eva_Navarro.componentes.pie import pie
 
 # Estamos definiendo que el archivo index.py es una página de la web
 @rx.page(
+    route = ruta.HONORARIOS.value,
     # Solo admite una cadena alfanumérica.
-    title = 'Página de Honorarios de Procuradores',
+    title = 'Honorarios de los Procuradores',
     # Solo admite una cadena alfanumérica.
-    description='Esta es la página de los honorarios de los procuradres',
-    image='/svg/honorarios.svg',
+    description = 'Esta es la página de los honorarios de la Procuradora Eva Navarro',
+    image=meta.imagen_honorarios,
     # meta = Permite añadir o definido en otro archivo
-    meta = meta.indice_meta,
+    meta = meta.honorarios_meta,
 )
 
 # Añadimos los componentes que se van a ver en la página principal

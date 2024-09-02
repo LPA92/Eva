@@ -36,13 +36,96 @@ _meta = [
     {'name': 'viewport', 'content': '"width=device-width, initial-scale=1.0"'},
     ]
 
-# Meta especifico para la página index, 
+# Página de Inicio
+
+imagen_inicio = '/svg/Logo_Procurador.svg'
+
+# Meta común para la página inicio, 
 # facebook → og:
 # twitter -> twitter:
-indice_meta = [
-    {'name': 'og:title', 'content': 'EVNN'},
-    {'name': 'og:description','content': 'Hola, mi nombre es Eva Maria Navarro Naranjo.'},
+inicio_meta = [
+    {'name': 'og:title', 'content': 'Pagina de Inicio'},
+    {'name': 'og:description','content': 'Hola, soy Procuradora y mi nombre es Eva Maria Navarro Naranjo.'},
     {'name': 'og:type', 'content': 'website'},
     ]
+
 # Para incluir el meta común dentro de la página index
-indice_meta.extend(_meta)
+inicio_meta.extend(_meta)
+
+# Partidos Judiciales
+
+imagen_partido = '/svg/NV_Partidos.svg'
+
+# Meta común para la página de partidos judiciales, 
+# facebook → og:
+# twitter -> twitter:
+partido_meta = [
+    {'name': 'og:title', 'content': 'Pagina de Partidos Judiciales'},
+    {'name': 'og:description','content': 'Esta es la distribución de los partidos judiciales en Gran Canaria.'},
+    {'name': 'og:type', 'content': 'website'},
+    ]
+
+# Para incluir el meta común dentro de la página de partidos judiciales
+partido_meta.extend(_meta)
+
+
+# Servicios
+
+imagen_servcio = '/svg/NV_Servicios.svg'
+
+# Meta común para la página de Servicios de los Procuradores, 
+# facebook → og:
+# twitter -> twitter:
+servicio_meta = [
+    {'name': 'og:title', 'content': 'Servicios de los Procuradores'},
+    {'name': 'og:description','content': 'Estos son los servicios que presta una Procuradora en el ámbito judicial.'},
+    {'name': 'og:type', 'content': 'website'},
+    ]
+
+# Para incluir el meta común dentro de la página de servicios de los procuradores
+servicio_meta.extend(_meta)
+
+# Honorarios de los Procuradores
+
+imagen_honorarios = '/svg/NV_Honorarios.svg'
+
+# Meta común para la página de honorarios, 
+# facebook → og:
+# twitter -> twitter:
+honorarios_meta = [
+    {'name': 'og:title', 'content': 'Honorarios de los Procuradores'},
+    {'name': 'og:description','content': 'Estos son los honorarios de los Procuradores en el ámbito judicial.'},
+    {'name': 'og:type', 'content': 'website'},
+    ]
+# Para incluir el meta común dentro de la página de honorarios
+honorarios_meta.extend(_meta)
+
+# Web Externas
+
+imagen_externo = '/svg/NV_Externas.svg'
+
+# Meta común para las Web's externas
+# facebook → og:
+# twitter -> twitter:
+externo_meta = [
+    {'name': 'og:title', 'content': 'Webs Externas'},
+    {'name': 'og:description','content': 'Webs externas que pueden ser de interés en el ámbito judicial.'},
+    {'name': 'og:type', 'content': 'website'},
+    ]
+# Para incluir el meta común dentro de las Webs externas
+externo_meta.extend(_meta)
+
+# Area Privada
+
+imagen_privado = '/svg/UE.svg'
+
+# Meta común para el área privada
+# facebook → og:
+# twitter -> twitter:
+privado_meta = [
+    {'name': 'og:title', 'content': 'Area Privada'},
+    {'name': 'og:description','content': 'Area Privada de la Procuradora Eva Navarro.'},
+    {'name': 'og:type', 'content': 'website'},
+    ]
+# Para incluir el meta común dentro del área privada
+privado_meta.extend(_meta)
