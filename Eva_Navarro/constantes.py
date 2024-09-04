@@ -22,5 +22,5 @@ LINKEDIN_URL = "https://es.linkedin.com/in/evamarianavarro"
 EMAIL = "navarro.evamaria@gmail.com"
 MOVIL = "638 619 221"
 
-# Procurador
+# Procuradora
 PROCURADOR = "Eva Maria Navarro Naranjo"
