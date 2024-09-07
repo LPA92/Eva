@@ -39,11 +39,11 @@ def img_pie(src: str, alt: str, texto: str) -> rx.Component:
     )
 
     
-def img_vista(src: str, alt: str, width: str ) -> rx.Component:
+def img_vista(src: str, alt: str, ancho: str ) -> rx.Component:
     return rx.image(
         src,
         alt,
-        width,
+        width = 'ancho',
         height = 'auto',
         align = 'center',       
     )

@@ -61,7 +61,7 @@ def navegacion() -> rx.Component:
                 icon = rx.image(
                     src = '/svg/Logo_Procurador.svg',
                     alt = ' Logo Procurador',
-                    width=Tamanyo.XL.value,
+                    width='100%',
                     ),
                     href = ruta.INDEX.value,
                     # Posición fija ponemos position=’sticky y top=’0’
@@ -69,7 +69,9 @@ def navegacion() -> rx.Component:
                     # Se queda fija arriba del todo de la página web
                     top='0',
             ),
+            # Separación horizontal entre los diferentes elementos que contiene el flex
             spacing='5',
         ),
-        margin_top=Tamanyo.XXL.value,
+        # Establecemos el margen superior
+        margin_top=Tamanyo.XL.value,
     ),

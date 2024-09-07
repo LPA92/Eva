@@ -25,10 +25,11 @@ def vistainicio() -> rx.Component:
         # hstack = Posiciona los componentes de forma horizontal
         rx.hstack(
             # Pone la imagen Justicia.svg
-            imagen(
-                '/svg/Justicia.svg',
-                'Imagen de Justicia',
-                '30%',
+            rx.image(
+                src = '/svg/Justicia.svg',
+                alt = 'Imagen de Justicia',
+                width ='35%',
+                height = 'auto',
             ),
             rx.box(     
                 # Creamos una caja flexible parea alterar sus dimnensiones y llenar el espacio disponible

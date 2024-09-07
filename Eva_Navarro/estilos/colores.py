@@ -11,6 +11,14 @@ class Color(Enum):
     FONDO = '#0C151D'
     # Azul oscuro tirando a grisáceo
     CONTENIDO = '#171F26'
+    # Verde para encabezado de tabla
+    TABLA = '#006400'
+    # Rojo Oscuro #D20103 -> Más oscuro #930405 -> Naranja #f54021 -> Amarillo #ffff9c
+    CELDA = '#ffff9c'
+    # Color azul
+    BORDE = '#32a1ce'
+    
+    
 
 # Colores para los textos
 class TextoColor(Enum):
@@ -22,3 +30,5 @@ class TextoColor(Enum):
     PIE = '#A3ABB2'
     # Navegación - Amarillo
     NAV = '#D8FF00'
+    # Tabla color negro
+    CELDA = '#000000'

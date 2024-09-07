@@ -93,6 +93,45 @@ ESTILO_GENERICO = {
         # Para que se quede igual al pasar el ratón encima de él
         '_hover': {},
     },
+    
+    # border-width: thick;
+    
+    rx.table.column_header_cell: {
+        # Definimos el color del texto 
+        'color': TextoColor.CABEZA.value,
+        # Definimos el color de fondo de todos los encabezados de tablas
+        'background_color': Color.TABLA.value,
+        # Establecemos el tipo del borde de la tabla
+        'border': 'solid',
+        # Establecemos el grosor del borde de la tabla
+        'border_width': Tamanyo.XS.value,
+        # Establecemos el color del borde rojo
+        'border_color': Color.BORDE.value,
+    },
+    rx.table.row_header_cell: {
+        # Definimos el color del texto 
+        'color': TextoColor.CELDA.value,
+        # Definimos el color de fondo de todos las celdas de tablas
+        'background_color': TextoColor.CABEZA.value,
+        # Establecemos el tipo del borde de la tabla
+        'border': 'solid',        
+        # Establecemos el grosor del borde de la tabla
+        'border_width': Tamanyo.XS.value,
+        # Establecemos el color del borde rojo
+        'border_color': Color.BORDE.value,
+    },
+    rx.table.cell: {
+        # Definimos el color del texto 
+        'color': TextoColor.CELDA.value,
+        # Definimos el color de fondo de todos las celdas de tablas
+        'background_color': TextoColor.CABEZA.value,
+        # Establecemos el tipo del borde de la tabla
+        'border': 'solid',        
+        # Establecemos el grosor del borde de la tabla
+        'border_width': Tamanyo.XS.value,
+        # Establecemos el color del borde rojo
+        'border_color': Color.BORDE.value,
+    },
 }
 
 
@@ -117,7 +156,15 @@ estilo_imagen_NAV = dict(
 
 # Texto del título que especifica a un bloque de enlaces
 titulo_estilo = dict(
-
+    
+    # Definimos el tipo de fuente
+    font_family = Fuente.TITULO.value,
+    # Definimos el peso de la fuente
+    font_weight = Trazo.NEGRITA.value,
+    # Establecemos el color de la fuente
+    color = Color.PRIMARIO.value,
+    # Definimos el tamaño de la fuente
+    font_size = Tamanyo.VB.value,
     # El texto ocupa el 100% de la pantalla
     width = '100%',
 )
