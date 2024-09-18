@@ -2,13 +2,11 @@
 import reflex as rx
 # Importamos las utilidades
 import Eva_Navarro.meta as meta
-# Iportamos los estilos
+# Importamos los estilos
 import Eva_Navarro.estilos.generico as comun
 
 # Importamos las rutas
 from Eva_Navarro.rutas import Rutas as ruta
-# Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo 
 # Página de navegación
 from Eva_Navarro.componentes.navegacion import navegacion
 # Contenido de la página de inicio
@@ -37,13 +35,13 @@ def index() -> rx.Component:
         # Idioma de la página
         meta.lenguaje(),
             # Menu de Navegación
-            navegacion(),
-            rx.center(
-                rx.vstack(            
-                    vistainicio(),
-                    style = comun.Pagina,
-                ),
+        navegacion(),
+        rx.center(
+            rx.vstack(            
+                vistainicio(),
+                style = comun.Pagina,
             ),
-            # Pie de página
-            pie(),
+        ),
+        # Pie de página
+        pie(),
     ),

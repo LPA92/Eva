@@ -7,19 +7,17 @@
 import reflex as rx 
 # Importamos los enlaces
 import Eva_Navarro.constantes as ctes
+# Importamos los estilos
+import Eva_Navarro.estilos.generico as comun
 
-# Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo
-# Importamos los colores generales
-from Eva_Navarro.estilos.colores import Color as Color
-# Importamos los colores de los textos
-from Eva_Navarro.estilos.colores import TextoColor as TextoColor
 # Importamos la plantilla de imagenes del pie
 from Eva_Navarro.componentes.imagenes import img_pie as imagen
 # Importamos la plantilla de imagenes del nav
 from Eva_Navarro.componentes.imagenes import nav as nav
 # Importamos la plantilla de imagenes
 from Eva_Navarro.componentes.imagenes import logo as logo
+# Importamos los valores para las imagenes
+from Eva_Navarro.estilos.valores import Imagen as Imagen
 
 
 
@@ -51,10 +49,8 @@ def pie() -> rx.Component:
                 'Contacto',
                 f'mailto:{ctes.EMAIL}',
             ),
-            spacing='5',
+            spacing = '5',
+            style = comun.Flexible,
         ),
-
-    ),            
-        
-        
-        
+        margin_top = Imagen.I01.value,
+    )

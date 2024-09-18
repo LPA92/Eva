@@ -1,10 +1,13 @@
 # Importamos reflex
 import reflex as rx
 # Importamos los estilos
-import Eva_Navarro.estilos.generico as estilo
+import Eva_Navarro.estilos.texto as estilo
+# Importamos las escalas
+import Eva_Navarro.estilos.escalas as escala
 
 # Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo
+from Eva_Navarro.estilos.valores import Texto as Espacio
+
 
 
 # Definimos el componente botón para usarlo en las diferentes vistas
@@ -23,15 +26,15 @@ def link_NV(titulo:str, imagen: str, url: str, is_external=True) -> rx.Component
                     src = imagen,
                     # Texto que sale si no carga la imagen
                     alt = titulo,
-                    style=estilo.estilo_imagen_NAV,
+                    style=escala.escala_nav,
                 ),
                 # Tamaño del texto definido en boton_titulo_estilo
                 rx.text(titulo, style=estilo.boton_titulo_estilo),
                 align_items='start',
                 # Ponemos un relleno en el eje Y ( vertical ) en el componente botón
-                padding_y = Tamanyo.XS.value,
+                padding_y = Espacio.T05.value,
                 # Ponemos un relleno a la derecha del componente botón
-                padding_right = Tamanyo.XS.value,
+                padding_right = Espacio.T05.value,
                 # Para que todos los botones ocupen el 100%              
                 width = '100%',
             ),            

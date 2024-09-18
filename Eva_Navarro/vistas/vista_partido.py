@@ -1,14 +1,15 @@
 # Importamos reflex
 import reflex as rx
+# Importamos los estilos
+import Eva_Navarro.estilos.generico as comun
 
 # Importamos la plantilla de información profesional
 from Eva_Navarro.componentes.titulo import titulo as titulo
-# Importamos los colores de texto
-from Eva_Navarro.estilos.colores import TextoColor as TextoColor
 # Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo
-# Importamos las plantillas de imagenes para la vista
-from Eva_Navarro.componentes.imagenes import img_vista as imagen
+from Eva_Navarro.estilos.texto import Texto as Tamanyo
+# Importamos las escalas
+import Eva_Navarro.estilos.escalas as escala
+
 
 # Añadimos los componentes que se van a ver en la página principal
 def vistapartido() -> rx.Component:
@@ -23,11 +24,11 @@ def vistapartido() -> rx.Component:
                     src = '/svg/Partidos.svg',
                     # Si no carga la imagen nos sale el texto definido en alt
                     alt = 'Imagen de Partidos Judiciales',
-                    width ='150%',
-                    height = 'auto',
+                    style = escala.escala_partido,
                 ),
                 # Relleno de 1 rem alrededor del box.
-                padding = Tamanyo.DF.value,
+                # padding = Tamanyo.DF.value,
+                margin_top = Tamanyo.T08.value,
             ),            
             rx.box(  
                 rx.flex(
@@ -36,10 +37,11 @@ def vistapartido() -> rx.Component:
                             titulo(
                                 'Partidos Judiciales de la isla de Gran Canaria'
                             ),
-                            margin_left=Tamanyo.XXL.value,
+                            margin_left=Tamanyo.T07.value,
                         ),
+                        # Separación vertical entre el texto y la tabla
                         rx.spacer(),
-                        rx.spacer(),
+                        # rx.spacer(),
                         rx.table.root(
                             # Encabezamiento de la tabla ( parte superior )
                             rx.table.header(
@@ -76,13 +78,13 @@ def vistapartido() -> rx.Component:
                                     rx.table.row_header_cell("Firgas"),
                                     rx.table.row_header_cell("Galdar"),
                                     rx.table.row_header_cell("Telde"),
-                                    rx.table.row_header_cell("Vega de San Mateo"),
+                                    rx.table.row_header_cell("Vega San Mateo"),
                                     rx.table.row_header_cell("Sta Lucia de Tirajana"),
                                 ),
                                 rx.table.row(
                                     rx.table.row_header_cell("Tejeda"),
                                     rx.table.row_header_cell("Moya"),
-                                    rx.table.row_header_cell("Valsequillo de G.C."),
+                                    rx.table.row_header_cell("Valsequillo GC"),
                                     rx.table.row_header_cell(""),
                                     rx.table.row_header_cell(""),
                                 ),                       
@@ -100,18 +102,13 @@ def vistapartido() -> rx.Component:
                                     rx.table.cell(""),
                                     rx.table.cell(""),
                                 ),
-                                width="100%",
+                                width = "100%",
+                                font_size = Tamanyo.T04.value,
                             ),
                         ),
                     ),
+                    style = comun.Flexible,
                 ),
-                # Para separar la imagen del texto
-                margin_left = Tamanyo.XL.value,
-                # Especifica que los elementos flexibles se ajustaran si es necesario
-                Flex_wrap = 'wrap',
             ),
         ),
-        margin_top = Tamanyo.XXL.value,
-        margin_bottom = Tamanyo.XL.value,
-        margin_left = Tamanyo.XL.value,        
     )

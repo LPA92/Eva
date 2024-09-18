@@ -1,12 +1,10 @@
 # Importamos reflex
 import reflex as rx
+# Importamos los estilos
+import Eva_Navarro.estilos.generico as comun
 
 # Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo
-# Importamos los colores generales
-from Eva_Navarro.estilos.colores import Color as Color
-# Importamos los colores de los textos
-from Eva_Navarro.estilos.colores import TextoColor as TextoColor
+from Eva_Navarro.estilos.valores import Texto as Tamanyo
 # Importamos las rutas
 from Eva_Navarro.rutas import Rutas as ruta
 # Importamos el botón flotante de la librería ant.design
@@ -61,7 +59,7 @@ def navegacion() -> rx.Component:
                 icon = rx.image(
                     src = '/svg/Logo_Procurador.svg',
                     alt = ' Logo Procurador',
-                    width='100%',
+                    width='200%',
                     ),
                     href = ruta.INDEX.value,
                     # Posición fija ponemos position=’sticky y top=’0’
@@ -69,9 +67,10 @@ def navegacion() -> rx.Component:
                     # Se queda fija arriba del todo de la página web
                     top='0',
             ),
-            # Separación horizontal entre los diferentes elementos que contiene el flex
-            spacing='5',
+            # Separación entre los diferentes funciones que contiene el rx.flex
+            spacing = '8',
+            # Establecemos el estilo definido para la navegación
+            style = comun.Fijo_Nav,
         ),
-        # Establecemos el margen superior
-        margin_top=Tamanyo.XL.value,
+
     ),

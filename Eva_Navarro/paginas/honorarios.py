@@ -2,6 +2,8 @@
 import reflex as rx
 # Importamos las utilidades
 import Eva_Navarro.meta as meta
+# Importamos los estilos
+import Eva_Navarro.estilos.generico as comun
 
 # Importamos las rutas
 from Eva_Navarro.rutas import Rutas as ruta
@@ -33,7 +35,12 @@ def honorarios() -> rx.Component:
         meta.lenguaje(),
         # Menu de Navegación
         navegacion(),
-        vistahonorario(),
+        rx.center(
+            rx.vstack(            
+                vistahonorario(),
+                style = comun.Pagina,
+            ),
+        ),
         # Pie de página
         pie(),
     ),

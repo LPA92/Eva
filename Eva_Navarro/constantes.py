@@ -12,9 +12,11 @@ IPC_URL = "https://www.ine.es/varipc/index.do"
 
 DIRECCIONES_URL = "https://www.mjusticia.gob.es/BUSCADIR/ServletControlador?apartado=buscadorGeneral"
 
-CALCULO_INTERESES_URL = "https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/relacionados/tiposinteres/guia-textual/tiposinteresrefe/Tabla_tipos_de_interes_legal.html"
+CALCULO_INTERESES_URL = "https://www.calculo-intereses.com/#/"
 
 INTERES_LEGAL = "https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/relacionados/tiposinteres/guia-textual/tiposinteresrefe/Tabla_tipos_de_interes_legal.html"
+
+LETRA_DNI_URL = "https://www.letranif.com/"
 
 
 # Pie de página

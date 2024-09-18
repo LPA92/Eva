@@ -2,34 +2,30 @@
 import reflex as rx
 # Importamos la libreria datetime de python
 import datetime
+# Importamos los estilos
+import Eva_Navarro.estilos.generico as comun
 
 # Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo
-# Importamos los colores de los textos
-from Eva_Navarro.estilos.colores import TextoColor as TextoColor
+from Eva_Navarro.estilos.texto import Texto as Tamanyo
 # Importamos la plantilla de información profesional
 from Eva_Navarro.componentes.info_profesional import texto_inicio, texto_parrafo
-# Importamos las fuentes
-from Eva_Navarro.estilos.fuentes import Fuente as Fuente
-# Importamos los trazos de las fuentes
-from Eva_Navarro.estilos.fuentes import Trazo as Trazo
-# Importamos las plantillas de imagenes para la vista
-from Eva_Navarro.componentes.imagenes import img_vista as imagen
+
+# Importamos las escalas
+import Eva_Navarro.estilos.escalas as escala
 
 
 # Añadimos los componentes que se van a ver en la página principal
 def vistainicio() -> rx.Component:
     
-        # vstack = Posiciona los componentes de forma vertical
-    return rx.vstack(
+        # vstack = Posiciona los componentes de forma horizontal
+    return rx.hstack(
         # hstack = Posiciona los componentes de forma horizontal
-        rx.hstack(
+        rx.flex(
             # Pone la imagen Justicia.svg
             rx.image(
                 src = '/svg/Justicia.svg',
                 alt = 'Imagen de Justicia',
-                width ='35%',
-                height = 'auto',
+                style = escala.escala_inicio,
             ),
             rx.box(     
                 # Creamos una caja flexible parea alterar sus dimnensiones y llenar el espacio disponible
@@ -70,10 +66,12 @@ def vistainicio() -> rx.Component:
                             'para cualquier procedimiento judicial radicado en la isla de Gran Canaria',
                         ),    
                     ),
+                    style = comun.Flexible,                    
                 ),
                 # Para separar la imagen del texto
-                margin_left = Tamanyo.XXL.value
+                margin_left = Tamanyo.T08.value
             ),
+            align_items = 'center'
         ),            
     ),  
 

@@ -1,9 +1,8 @@
 # Importamos reflex
 import reflex as rx
-# Importamos los estilos
-import Eva_Navarro.estilos.generico as generico
 # Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo
+import Eva_Navarro.estilos.texto as Texto
+
 # Importamos las fuentes
 from Eva_Navarro.estilos.fuentes import Fuente as Fuente
 # Importamos los pesos de las fuentes
@@ -18,10 +17,10 @@ def texto_inicio(titulo: str, cuerpo: str) -> rx.Component:
         # Para poner un span → text.span
         rx.text.span(
             titulo,
-            style = generico.negrita
+            style = Texto.negrita
         ),
         f' {cuerpo}',
-        style = generico.normal
+        style = Texto.normal
     )
     
 def texto_parrafo(titulo: str, cuerpo: str, texto: str) -> rx.Component:
@@ -30,16 +29,16 @@ def texto_parrafo(titulo: str, cuerpo: str, texto: str) -> rx.Component:
         # Texto normal
         rx.text.span(
             titulo,
-            style = generico.normal
+            style = Texto.normal
         ),
         # Texto negrita
         rx.text.span(
             cuerpo,
-            style = generico.negrita
+            style = Texto.negrita
         ),        
         # Texto normal
         rx.text.span(
             texto,
-            style = generico.normal
+            style = Texto.normal
         ),
     )    

@@ -4,18 +4,49 @@
 # gap = Espacio entre dos componentes
 
 # Tamaños de pantallas
-# SD    =    640 x   480
-# QHD =    960 x   540
-# HD    = 1.280 x   720
-# FHD = 1.920 x 1.080
-# QHD = 2.560 x 1.440
-# UHD = 3.840 x 2.160
-# 8K    = 7.680 x 4.320
+# SD  =   640 x   480  ->  40em
+# QHD =   960 x   540  ->  60em
+# HD  = 1.280 x   720  ->  80em , 45.0em
+# FHD = 1.920 x 1.080  -> 120em , 67.5em
+# QHD = 2.560 x 1.440  -> 160em
+# UHD = 3.840 x 2.160  -> 240em
+# 8K  = 7.680 x 4.320  -> 480em
+
+# Tamaños flexibles por defecto de reflex
+# initial = 0px,
+# xs = 30em, ->   480 px
+# sm = 48em, ->   768 px
+# md = 62em, ->   992 px
+# lg = 80em, -> 1.280 px
+# xl = 96em, -> 1.536 px
+
+# Tamaños a diseñar para el diseño flexible en reflex
+# xs    [ 960 x 540 ]
+#    -> Ancho =  60.00em
+#    -> Alto  =  33.75em
+
+# sm   [ 1.024 x 576 ]
+#    -> Ancho =  64em
+#    -> Alto  =  36em 
+
+# md   [ 1.280 *  720 ]
+#    -> Ancho =  80em
+#    -> Alto  =  45em
+
+# lg   [ 1.328 * 736 ]
+#    -> Ancho =  83em
+#    -> Alto  =  46em
+
+# xl  [ 1.920 * 1.072 ]
+#    -> Ancho = 120em
+#    -> Alto  =  67em
+
+
+
 
 # Importamos reflex
 import reflex as rx 
-# Importamos la librería enum de python
-from enum import Enum
+
 # Importamos los colores
 from .colores import Color as Color
 # Importamos los colores de los textos
@@ -24,12 +55,26 @@ from .colores import TextoColor as TextoColor
 from .fuentes import Fuente as Fuente
 # Importamos el peso de las fuentes
 from .fuentes import Trazo as Trazo
+# Importamos los tamaños para el texto
+from .valores import Texto as Tamanyo
+# Importamos los valores para las separaciones
+from .valores import Separacion as Espacio
+# Importamos las diferentes pantallas
+# from .valores import Monitor as Monitor
 
+
+    # Para establecer los puntos de interrupción para las diferentes pantallas (responsive)
+    # xs =  60em, 33.75em ->   960 px ,   540 px
+    # sm =  64em, 36.00em -> 1.024 px ,   576 px
+    # md =  80em, 45.00em -> 1.280 px ,   720 px
+    # lg =  83em, 46.00em -> 1.328 px ,   736 px
+    # xl = 120em, 67.50em -> 1.920 px , 1.080 px
 
 # En mayúsculas para definir que es una constante
-MAX_ANCHO = '80em', # 1em=16px → 1.280 de ancho
-MAX_ALTO = '45em',  # 1em=16px →   720 de alto
+MAX_ANCHO = '90em', # 1em=16px → 1.440 de ancho
+MAX_ALTO = '46em',  # 1em=16px →   736 de alto
 
+FLEX_DIRECCION = ["column", "column", "row", "row", "row"]
 
 # Hoja de estilos ( cargamos las fuentes )
 HOJA_ESTILOS = [
@@ -49,24 +94,25 @@ HOJA_ESTILOS = [
     
     ]
 
-# Tamaños a aplicar en la web
-class Tamanyo(Enum):
-    ZERO = '0'
-    XXS = '0.25em',
-    XS = '0.50em',
-    S = '0.75em',
-    DF = '1.00em',
-    M = '1.25em',
-    L = '1.50em',
-    XL = '1.75em',
-    XXL = '2.00em',
-    BG = '2.25em',
-    VB = '2.50em',
-    EB = '2.75em'
-    UB = '7.00em',
-
 # Estilos Genéricos a aplicar en toda la página web
 ESTILO_GENERICO = {
+
+    # Para establecer los puntos de interrupción para las diferentes pantallas (responsive)
+    # xs =  60em, ->   960 px ,   540 px  [ 33.75em ]
+    # sm =  64em, -> 1.024 px ,   576 px  [ 36.00em ]
+    # md =  80em, -> 1.280 px ,   720 px  [ 45.00em ]
+    # lg =  83em, -> 1.328 px ,   736 px  [ 46.00em ]
+    # xl = 120em, -> 1.920 px , 1.080 px  [ 67.50em ]
+
+    # Establecemos los puntos de ruptura para las diferentes pantallas.    
+    "breakpoints": [
+        '960px',
+        '1024px',
+        '1280px',
+        '1328px',
+        '1920px',
+    ],
+
     # Establecemos la fuente por defecto
     'font_family': Fuente.DEFECTO.value,
     # Definimos el peso de la fuente por defecto
@@ -75,7 +121,6 @@ ESTILO_GENERICO = {
 
     # Todos los botones van a tener el mismo estilo
     rx.button: {
-
         # Definimos el color del texto en los botones
         'color': TextoColor.NAV.value,
         # Definimos el color de fondo de todos los botones
@@ -104,7 +149,7 @@ ESTILO_GENERICO = {
         # Establecemos el tipo del borde de la tabla
         'border': 'solid',
         # Establecemos el grosor del borde de la tabla
-        'border_width': Tamanyo.XS.value,
+        'border_width': Tamanyo.T04.value,
         # Establecemos el color del borde rojo
         'border_color': Color.BORDE.value,
     },
@@ -116,7 +161,7 @@ ESTILO_GENERICO = {
         # Establecemos el tipo del borde de la tabla
         'border': 'solid',        
         # Establecemos el grosor del borde de la tabla
-        'border_width': Tamanyo.XS.value,
+        'border_width': Tamanyo.T04.value,
         # Establecemos el color del borde rojo
         'border_color': Color.BORDE.value,
     },
@@ -128,156 +173,33 @@ ESTILO_GENERICO = {
         # Establecemos el tipo del borde de la tabla
         'border': 'solid',        
         # Establecemos el grosor del borde de la tabla
-        'border_width': Tamanyo.XS.value,
+        'border_width': Tamanyo.T04.value,
         # Establecemos el color del borde rojo
         'border_color': Color.BORDE.value,
     },
+
 }
 
-
-# Texto de la barra de navegación
-# dict = Diccionario
-navbar_titulo_estilo = dict(
-    # Tipo de fuente
-    font_family = Fuente.LOGO.value,
-    # Peso de la fuente
-    font_weight = Trazo.NEGRITA.value,
-    # Tamaño de la fuente del botón
-    font_size = Tamanyo.L.value,
-    color = TextoColor.NAV.value,
-)
-
-estilo_imagen_NAV = dict(
-    # Establecemos el ancho de la imagen
-    width = Tamanyo.L.value,
-    # Definimos la altura de la imagen
-    height = Tamanyo.L.value,
-)
-
-# Texto del título que especifica a un bloque de enlaces
-titulo_estilo = dict(
+Flexible = dict(
     
-    # Definimos el tipo de fuente
-    font_family = Fuente.TITULO.value,
-    # Definimos el peso de la fuente
-    font_weight = Trazo.NEGRITA.value,
-    # Establecemos el color de la fuente
-    color = Color.PRIMARIO.value,
-    # Definimos el tamaño de la fuente
-    font_size = Tamanyo.VB.value,
-    # El texto ocupa el 100% de la pantalla
-    width = '100%',
-)
-
-# Texto en negrita para las vistas
-negrita = dict(
-    # Definimos el tipo de fuente
-    font_family = Fuente.TITULO.value,
-    # Definimos el peso de la fuente
-    font_weight = Trazo.NEGRITA.value,
-    # Establecemos el color de la fuente para el span
-    color = TextoColor.CUERPO.value,
-    # Definimos el tamaño de la fuente para todo lo que contiene el box
-    font_size = Tamanyo.M.value,
-    # El texto ocupa el 100% de la pantalla
-    width = '100%',
-    # Coloca en el centro los diferentes componentes
-    align='center',
-)
-
-# Texto normal para las vistas
-normal = dict(
-    # Definimos el tipo de fuente
-    font_family = Fuente.TITULO.value,
-    # Definimos el peso de la fuente
-    font_weight = Trazo.NORMAL.value,
-    # Establecemos el color de la fuente para el span
-    color = TextoColor.CUERPO.value,
-    # Definimos el tamaño de la fuente para todo lo que contiene el box
-    font_size = Tamanyo.M.value,
-    # El texto ocupa el 100% de la pantalla
-    width = '100%',
-    # Coloca en el centro los diferentes componentes
-    align='center',    
-)
-
-pie_comun = dict(
-    # Establecemos que el texto ocupe el 100% de la pantalla
-    width = '100%',    
-    # Centramos el texto verticalmente
-    text_align = 'center',
-    # Definimos el tamaño de la letra
-    font_size = Tamanyo.L.value,
-    # Definimos el colr del texto del pie de página
-    color = TextoColor.PIE.value,
-        
+    # Flex_grow = Cantidad de espacio que ocupa horizontalmente el elemento especificado en comparación con el resto de elementos.
     
-    # Establecemos el margen superior del pie de página
-    margin_top =Tamanyo.ZERO.value,
-    # Especificamos el margen inferior
-    margin_bottom = Tamanyo.BG.value,
-
-    # Dentro del rx.flex()
-    # Distribuye los elementos equitativamente con espacios entre ellos   
-    justify = "between",        
-    # Coloca en el centro los diferentes componentes
-    align='center',
-
+    # flex_shrink = el elemento especificado se reduce tantas veces como le indiquemos con respecto a los demás elementos 
     
-    # Dejamos una sepación entre los diferentes componentes
-    spacing='2',
-
-    # Ponemos un relleno a la derecha del componente
-    padding_x = Tamanyo.XS.value,
-
+    # Estable la forma de alineación en el eje x
+    # space_between = Excepto los extremos dejan el mismo espacio entre sí lo diferentes elemetos
+    #space_around = Dejan el mismo espacio horizontal entre todos los elementos
+    justify_content = 'space_around',
+    # Alienación vertical en elementos flexibles ( FLEX )
+    align_items = 'center',
+    # Para ajustar la distancia en el eje vertical cuando hay multilineas
+    # align_content = 'start'
+    flex_direction = FLEX_DIRECCION,
+    # Permite que se desborde o no los elementos, si lo permite pasan a la siguiente línea.
+    flex_wrap = 'wrap',
 )
 
-estilo_imagen_PIE = dict(
-    # Establecemos el ancho de la imagen
-    width = Tamanyo.L.value,
-    # Definimos la altura de la imagen
-    height = Tamanyo.L.value,
-    # Centramos la imagen
-    align = 'center',
-    # Establecemos un margen para la imagen
-    # margin = Tamanyo.M.value,
-)
-
-# Texto del botón
-# dict = Diccionario
-boton_titulo_estilo = dict(
-    # Tipo de fuente
-    font_family = Fuente.TITULO.value,
-    # Peso de la fuente
-    font_weight = Trazo.NEGRITA.value,
-    # Tamaño de la fuente del botón
-    font_size = Tamanyo.L.value,
-    color = TextoColor.CABEZA.value,
-    margin_top = Tamanyo.XXS.value,
-)
-
-estilo_imagen_VISTA = dict(
-    # Establecemos el ancho de la imagen
-    width = '80%',
-    # Definimos la altura de la imagen
-    height = 'auto',
-    # Centramos la imagen
-)
-
-# cuerpo del botón
-# dict = Diccionario
-boton_cuerpo_estilo = dict(
-    # Peso de la fuente
-    font_weight = Trazo.NORMAL.value,
-    # Tamaño de la fuente del botón
-    font_size = Tamanyo.L.value,
-    # Color del texto del botón
-    color = TextoColor.CUERPO.value,
-    # Margen del botón
-    margin_buttom = Tamanyo.XL.value,
-)
-
-estilo_Navegacion = dict(
+Fijo_Nav = dict(
     
     ### PARA FIJAR BARRA DE NAVEGACIÓN AL INICIO DE LA PÁGINA ###
     #  Para fijar la posición position='sticky', top='0' y z_index = '999' 
@@ -289,26 +211,26 @@ estilo_Navegacion = dict(
 
     # CARACTERISTICAS DEL rx.flex()
     # direction=row Alinea verticalmete,direction=column Alinea horizontalmente,
-    align='center',
-    # direction=row Alinea horizontalmente,direction=column Alinea verticialmente,
-    justify="center",
-    # Si ponemos los rx en filas (row) o en columnas (column)
-    direction='row',
-    # Dejamos una sepación entre la imagen y el hipervinculo
-    spacing='2',
+    justify_content = 'space_around',
+    # Alienación vertical en elementos flexibles ( FLEX )
+    align_items = 'Center',
+    # Para ajustar la distancia en el eje vertical cuando hay multilineas
+    # align_content = 'start'
+    flex_direction = FLEX_DIRECCION,
+    # Permite que se desborde o no los elementos, si lo permite pasan a la siguiente línea.
+    flex_wrap = 'wrap',  
+
     
     # COLOR, PADDING, MARGIN,
     
     # Color de fondo 
     bg = Color.CONTENIDO.value,
     
-    # Ponemos un espacio de BG [2,25em (36px)] alrededor del texto en el eje x
-    padding_x = Tamanyo.BG.value,
-    # Ponemos un espacio de DF [1em (16px)] alrededor del texto en el eje y
-    padding_y = Tamanyo.DF.value,
-
     # margen Inferior
-    margin_botton = Tamanyo.VB.value,
+    margin_botton = Tamanyo.T10.value,
+    
+    # Establecemos el margen superior
+    margin_top=Tamanyo.T07.value,    
 )
 
 Pagina = dict(
@@ -319,7 +241,7 @@ Pagina = dict(
     # Para que ocupe el 100% lo que hay dentro del vstack
     width="100%",
     # Dejamos un margen de 1.25em en el eje y
-    margin_y=Tamanyo.M.value,
+    margin_y=Tamanyo.T05.value,
     # Colocamos un relleno de 1.25em alrededor de la página
-    padding=Tamanyo.M.value
+    padding=Tamanyo.T05.value
 )

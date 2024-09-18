@@ -1,14 +1,18 @@
 # Importamos reflex
 import reflex as rx
-# Importamos los estilos genericos
+# Importamos los diferentes textos
+import Eva_Navarro.estilos.texto as formato
+# Importamos las escalas
+import Eva_Navarro.estilos.escalas as escala
 import Eva_Navarro.estilos.generico as comun
 
-# Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo
+
 # Importamos los colores del texto
 from Eva_Navarro.estilos.colores import TextoColor as TextoColor
-# Importamos los colores de fondo
-from Eva_Navarro.estilos.colores import Color as Color
+# Importamos las rutas
+from Eva_Navarro.rutas import Rutas as ruta
+# Importamos los tamaños del texto
+from Eva_Navarro.estilos.valores import Texto as Texto
 
 
 def img_pie(src: str, alt: str, texto: str) -> rx.Component:
@@ -19,33 +23,17 @@ def img_pie(src: str, alt: str, texto: str) -> rx.Component:
             # Si no carga la imagen sale el texto alt        
             alt,
             # Estilo común de la imagen definido en el archivo generico.py
-            style = comun.estilo_imagen_NAV,
+            style = escala.escala_nav,
         ),
         rx.text(
             # Texto que aparece dentro del link
             texto,
             # Estilo común del texto definido en el archivo generico.py
-            style=comun.navbar_titulo_estilo,
+            style = formato.texto_navbar,
         ),
         # Dejamos una sepación entre la imagen y el hipervinculo
-        spacing='2',
-        # row = fila  column = columna
-        direction='row',
-        # direction=row Alinea verticalmete,direction=column Alinea horizontalmente,
-        align='center',
-        # direction=row Alinea horizontalmente,direction=column Alinea verticialmente,        
-        justify='between',
-        margin_top=Tamanyo.L.value,
-    )
-
-    
-def img_vista(src: str, alt: str, ancho: str ) -> rx.Component:
-    return rx.image(
-        src,
-        alt,
-        width = 'ancho',
-        height = 'auto',
-        align = 'center',       
+        spacing = '4',
+        # style = comun.Flexible,
     )
     
 def nav(src: str, alt: str, texto: str, url:str) -> rx.Component:
@@ -55,27 +43,19 @@ def nav(src: str, alt: str, texto: str, url:str) -> rx.Component:
             src,
             # Si no carga la imagen sale el texto alt        
             alt,
-            # Estilo común de la imagen definido en el archivo generico.py
-            style = comun.estilo_imagen_NAV,
-        ),
+            style = escala.escala_nav,
+#           display=["flex", "flex", "flex", "flex", "flex"]
+        ),    
         rx.link(
             # Texto que aparece dentro del link
             texto,
-            # Estilo común del texto definido en el archivo generico.py
-            style=comun.navbar_titulo_estilo,
+            # Definimos el tamaño de la imagen según la pantalla
+            style = formato.texto_navbar,
             # Hipervinculo que nos dirigue a otra página
             href=url,                  
         ),
         # Dejamos una sepación entre la imagen y el hipervinculo
-        spacing='2',
-        # row = fila  column = columna
-        direction='row',
-        # direction=row Alinea verticalmete,direction=column Alinea horizontalmente,
-        align='center',
-        # direction=row Alinea horizontalmente,direction=column Alinea verticialmente,        
-        justify='between',
-        margin_top=Tamanyo.L.value,
-        
+        spacing = '4',
     )
     
 def logo(src: str, alt: str, texto: str, titulo: str) -> rx.Component:
@@ -86,25 +66,22 @@ def logo(src: str, alt: str, texto: str, titulo: str) -> rx.Component:
             # Si no carga la imagen sale el texto alt        
             alt,
             # Estilo común de la imagen definido en el archivo generico.py
-            style = comun.estilo_imagen_NAV,
+            style = escala.escala_nav,
         ),
         # Para que al pasar el ratón sobre él nos muestre el content
         rx.tooltip(
-            rx.button(
-                titulo,
-                style=comun.navbar_titulo_estilo,
-                color = TextoColor.NAV.value,
+            rx.link(
+                rx.button(
+                    titulo,
+                    style = formato.texto_navbar,
+                    color = TextoColor.NAV.value,
                 ),
-                content=texto,
-                side='bottom',
-                ),
+                href=ruta.INDEX.value,
+            ),
+            content = texto,            
+            side = 'bottom',
+        ),
         # Dejamos una sepación entre la imagen y el hipervinculo
-        spacing='2',
-        # row = fila  column = columna
-        direction='row',
-        # direction=row Alinea verticalmete,direction=column Alinea horizontalmente,
-        align='center',
-        # direction=row Alinea horizontalmente,direction=column Alinea verticialmente,        
-        justify='between',
-        margin_top=Tamanyo.L.value,
+        # spacing = '4',
+        style = comun.Flexible,
     )

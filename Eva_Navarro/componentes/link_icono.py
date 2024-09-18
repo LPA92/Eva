@@ -14,24 +14,23 @@
 # Importamos reflex
 import reflex as rx
 
+# Importamos las escalas
+import Eva_Navarro.estilos.escalas as escala
 # Importamos los tamaños
-from Eva_Navarro.estilos.generico import Tamanyo as Tamanyo
+from Eva_Navarro.estilos.texto import Texto as Texto
 
 
 
-def link_icono(titulo: str, imagen: str, url: str, alt: str) -> rx.Component:
+def link_icono(titulo: str, imagen: str, url: str ) -> rx.Component:
     # rx.link →  Para poder usar una url    
     return rx.link(
         # Para colocar el icono que corresponde a la url
-        rx.image(
-            src = imagen,
-            # Establecemos el ancho de la imagen
-            width = Tamanyo.DF.value,
-            # Definimos la altura de la imagen
-            height = Tamanyo.DF.value,
-            # Si no carga la imagen sale el texto alt
-            alt = alt
-        ),
+            rx.image(
+                src = imagen,
+                # Texto que sale si no carga la imagen
+                alt = titulo,
+                style=escala.escala_icono,
+                ),
         # Para poner el enlace donde ira la página web
         href=url,
         # Cada vez que pulsemos el botón se nos abrirá una nueva página
