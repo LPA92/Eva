@@ -116,17 +116,20 @@ texto_tabla = dict(
     font_weight = Trazo.NEGRITA.value,
     # Establecemos el color del texto
     color = Color.PRIMARIO.value,
+    
+    # El texto ocupa el 100% de la pantalla
+    width = '100%',    
+    
     # Definimos el tamaño del texto en función de la pantalla
     font_size = rx.breakpoints(
         initial=Texto.T07.value,
         xs=Texto.T08.value,
         sm=Texto.T09.value,
         md=Texto.T10.value,
-        lg=Texto.T11.value,
-        xl=Texto.T12.value,
+        lg=Texto.T10.value,
+        xl=Texto.T10.value,
     ),
-    # El texto ocupa el 100% de la pantalla
-    width = '100%',
+
     # Para cambiar los tamaños de la letra en función de la pantalla
     display=["flex", "flex", "flex", "flex", "flex"],    
 )
@@ -140,12 +143,12 @@ texto_servicios = dict(
     # Establecemos el color del texto
     # Definimos el tamaño del texto en función de la pantalla
     font_size = rx.breakpoints(
-        initial=Texto.T04.value,
-        xs=Texto.T05.value,
-        sm=Texto.T06.value,
-        md=Texto.T07.value,
-        lg=Texto.T08.value,
-        xl=Texto.T09.value,
+        initial=Texto.T05.value,
+        xs=Texto.T06.value,
+        sm=Texto.T07.value,
+        md=Texto.T08.value,
+        lg=Texto.T09.value,
+        xl=Texto.T10.value,
     ),    
     color = TextoColor.CABEZA.value,
     # El texto ocupa el 100% de la pantalla

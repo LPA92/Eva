@@ -149,9 +149,17 @@ ESTILO_GENERICO = {
         # Establecemos el tipo del borde de la tabla
         'border': 'solid',
         # Establecemos el grosor del borde de la tabla
-        'border_width': Tamanyo.T04.value,
+        'border_width': Tamanyo.T02.value,
         # Establecemos el color del borde rojo
         'border_color': Color.BORDE.value,
+        # Para que todos los elementos ocupen lo mismo
+        'flex_grow': '1',
+        # Centramos el texto en el eje horizontal
+        'text_align': 'center',
+        # Centramos el texto en el eje vertical
+        'vertical_align' : 'center',          
+        # Definimos el tamaño de la letra        
+        'font_size': Tamanyo.T05.value,
     },
     rx.table.row_header_cell: {
         # Definimos el color del texto 
@@ -161,9 +169,17 @@ ESTILO_GENERICO = {
         # Establecemos el tipo del borde de la tabla
         'border': 'solid',        
         # Establecemos el grosor del borde de la tabla
-        'border_width': Tamanyo.T04.value,
+        'border_width': Tamanyo.T02.value,
         # Establecemos el color del borde rojo
         'border_color': Color.BORDE.value,
+        # Para que todos los elementos ocupen lo mismo
+        'flex_grow': '1',
+        # Centramos el texto en el eje horizontal
+        'text_align': 'center',
+        # Centramos el texto en el eje vertical
+        'vertical_align' : 'center',          
+        # Definimos el tamaño de la letra
+        'font_size': Tamanyo.T05.value,         
     },
     rx.table.cell: {
         # Definimos el color del texto 
@@ -173,9 +189,17 @@ ESTILO_GENERICO = {
         # Establecemos el tipo del borde de la tabla
         'border': 'solid',        
         # Establecemos el grosor del borde de la tabla
-        'border_width': Tamanyo.T04.value,
+        'border_width': Tamanyo.T02.value,
         # Establecemos el color del borde rojo
         'border_color': Color.BORDE.value,
+        # Para que todos los elementos ocupen lo mismo
+        'flex_grow': '1',
+        # Centramos el texto en el eje horizontal
+        'text_align': 'center',
+        # Centramos el texto en el eje vertical
+        'vertical_align' : 'center',          
+        # Definimos el tamaño de la letra
+        'font_size': Tamanyo.T05.value,
     },
 
 }

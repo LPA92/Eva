@@ -25,6 +25,9 @@ class Imagen(Enum):
     I02 = '2em',
     I01 = '1em',
     I00 = '0px',
+    IS1 = '18em',
+    IS2 = '13em',
+    IS3 = '8em',
     
 # Valores para los textos
 class Texto(Enum):

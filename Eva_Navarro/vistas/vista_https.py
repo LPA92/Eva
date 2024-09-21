@@ -20,6 +20,7 @@ def vistahttps() -> rx.Component:
         # rx.grid = Posiciona los componentes en forma de rejilla
     return rx.grid(
         # ponemos todas las imagenes
+
             # 1.- Colegio de Abogados de Las Palmas
             rx.link(
                 rx.image(
@@ -85,13 +86,23 @@ def vistahttps() -> rx.Component:
                 href = ctes.DIRECCIONES_URL,
             ),            
             # 9.- Cálculo de Intereses Generales
+#            rx.link(
+#                rx.image(
+#                    src="/svg/Interes_Gral.svg",
+#                    style = escala.escala_https,
+#                ),
+#                href = ctes.CALCULO_INTERESES_URL,
+#            ),
+
+            # 11.- Centro de Documentación Judicial           
             rx.link(
                 rx.image(
-                    src="/svg/Interes_Gral.svg",
+                    src="/svg/CENDOJ.svg",
                     style = escala.escala_https,
                 ),
-                href = ctes.CALCULO_INTERESES_URL,
-            ),
+                href = ctes.CENDOJ_URL,
+            ), 
+
             # 10.- Tabla de Intereses legales
             rx.link(
                 rx.image(
@@ -100,23 +111,8 @@ def vistahttps() -> rx.Component:
                 ),
                 href = ctes.INTERESES_JUDICIALES_URL,
             ),
-            # 11.- Centro de Documentación Judicial           
-            rx.link(
-                rx.image(
-                    src="/svg/CENDOJ.svg",
-                    style = escala.escala_https,
-                ),
-                href = ctes.CENDOJ_URL,
-            ),              
-            # 12.- Cálculo de la letra del DNI
-            rx.link(
-                rx.image(
-                    src="/svg/Letra_DNI.svg",
-                    style = escala.escala_https,
-                ),
-                href = ctes.LETRA_DNI_URL,
-            ),
-            # 13.- IPC
+
+            # 12.- IPC
             rx.link(
                 rx.image(
                     src="/svg/IPC.svg",
@@ -124,5 +120,19 @@ def vistahttps() -> rx.Component:
                 ),
                 href = ctes.IPC_URL,
             ),
-            style=rejilla.rejilla,
-        )
+            # 13.- Cálculo de la letra del DNI
+            rx.link(
+                rx.image(
+                    src="/svg/Letra_DNI.svg",
+                    style = escala.escala_https,
+                ),
+                href = ctes.LETRA_DNI_URL,
+            ),
+
+            style = rejilla.rejilla,
+            
+            margin_top = Tamanyo.T05.value,
+            margin_bottom = Tamanyo.T05.value,
+
+        ),
+

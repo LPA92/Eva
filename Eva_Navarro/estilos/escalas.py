@@ -53,12 +53,12 @@ escala_inicio = dict(
 # Escala para la imagen de la vista servicios
 escala_servicio = dict(
     width = rx.breakpoints(
-        initial = Imagen.I04.value,
+        initial = Imagen.I05.value,
         xs = Imagen.I05.value,
         sm = Imagen.I06.value,
-        md = Imagen.I07.value,
-        lg = Imagen.I08.value,
-        xl = Imagen.I09.value,
+        md = Imagen.IS3.value,
+        lg = Imagen.IS2.value,
+        xl = Imagen.IS1.value,
     ),
     height = 'auto',
     display=["flex", "flex", "flex", "flex", "flex"],  
@@ -68,12 +68,12 @@ escala_servicio = dict(
 escala_partido = dict(
 
     width = rx.breakpoints(
-        initial = Imagen.I04.value,
-        xs = Imagen.I05.value,
-        sm = Imagen.I06.value,
-        md = Imagen.I07.value,
-        lg = Imagen.I08.value,
-        xl = Imagen.I09.value,
+        initial = Imagen.I08.value,
+        xs = Imagen.I09.value,
+        sm = Imagen.I10.value,
+        md = Imagen.I11.value,
+        lg = Imagen.I12.value,
+        xl = Imagen.I13.value,
     ),
     height = 'auto',
     display=["flex", "flex", "flex", "flex", "flex"],   
@@ -98,12 +98,12 @@ escala_honorarios = dict(
 escala_https = dict(
 
     width = rx.breakpoints(
-        initial = Imagen.I01.value,
-        xs = Imagen.I02.value,
-        sm = Imagen.I03.value,
-        md = Imagen.I04.value,
-        lg = Imagen.I05.value,
-        xl = Imagen.I06.value,
+        initial = Imagen.I02.value,
+        xs = Imagen.I03.value,
+        sm = Imagen.I04.value,
+        md = Imagen.I05.value,
+        lg = Imagen.I06.value,
+        xl = Imagen.I08.value,
     ),
     height = 'auto',
     display=["flex", "flex", "flex", "flex", "flex"],    
