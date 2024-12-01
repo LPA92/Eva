@@ -1,6 +1,6 @@
-python3.12 -m venv .virtual
+python3.13 -m venv .virtual
 source .virtual/bin/activate
-python3.12 -m pip install -U pip
+python3.13 -m pip install -U pip
 pip install reflex --upgrade
 pip freeze > requirements.txt
 pip install -r requirements.txt

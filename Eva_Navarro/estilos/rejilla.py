@@ -14,7 +14,7 @@ rejilla = dict(
 #    ],
 
     # Separacion vertical entre las imagenes
-    gap = Tamanyo.T10.value,
+    gap = Tamanyo.T09.value,
     # Creamos el número de columnas según la pantalla
     grid_template_columns=[
         # Para el tamaño de pantalla más pequeño

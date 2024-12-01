@@ -34,43 +34,43 @@ def vistaservicio() -> rx.Component:
                         ),
                         rx.spacer(),
                         rx.spacer(),
-                        rx.spacer(),
+#                        rx.spacer(),
                         titulo(
                                 '- Representación procesal de los clientes.',
                         ),
                         rx.spacer(),
                         rx.spacer(),
-                        rx.spacer(),                        
+#                        rx.spacer(),                        
                         titulo(
                             '- Emplazamientos y citaciones (con habilitación judicial).',
                         ),
                         rx.spacer(),
                         rx.spacer(),
-                        rx.spacer(),                        
+#                        rx.spacer(),                        
                         titulo(
                             '- Asistir con la comision judicial, a los lanzamientos de deshaucios.',
                         ),
                         rx.spacer(),
                         rx.spacer(),
-                        rx.spacer(),                        
+#                        rx.spacer(),                        
                         titulo(
                             '- Notificaciones de resoluciones judiciales.',
                         ),
                         rx.spacer(),
                         rx.spacer(),
-                        rx.spacer(),                        
+#                        rx.spacer(),                        
                         titulo(
                             '- Seguimiento de los procedimientos judiciales.',
                         ),
                         rx.spacer(),
                         rx.spacer(),
-                        rx.spacer(),                        
+#                        rx.spacer(),                        
                         titulo(
                             '- Trabajo en todos los ordenes judiciales en Gran Canaria.',
                         ),
                         rx.spacer(),
                         rx.spacer(),
-                        rx.spacer(),                        
+#                        rx.spacer(),                        
                         titulo(
                             '- Utilización diaria de las Nuevas Tecnologías.',
                         ),
@@ -87,7 +87,7 @@ def vistaservicio() -> rx.Component:
             align_items = 'center'
         ),
         # Margen superior
-        margin_top = Tamanyo.T07.value,
+        margin_top = Tamanyo.T01.value,
         # Margen inferior
-        margin_bottom = Tamanyo.T08,
+        margin_bottom = Tamanyo.T01.value,
     )

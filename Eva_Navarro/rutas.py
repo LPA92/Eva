@@ -9,3 +9,4 @@ class Rutas(Enum):
     EXTERNOS = '/externos'
     HONORARIOS = '/honorarios'
     PRIVADO = '/privado'
+    ACCESO = '/acceso'

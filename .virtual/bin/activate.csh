@@ -13,13 +13,13 @@ setenv VIRTUAL_ENV "/mnt/e/Master/Visual_Studio_Code/GitLab/Python/Reflex/Eva_Na
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
+setenv VIRTUAL_ENV_PROMPT ".virtual"
 
 
 set _OLD_VIRTUAL_PROMPT="$prompt"
 
 if (! "$?VIRTUAL_ENV_DISABLE_PROMPT") then
     set prompt = "(.virtual) $prompt"
-    setenv VIRTUAL_ENV_PROMPT "(.virtual) "
 endif
 
 alias pydoc python -m pydoc

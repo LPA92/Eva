@@ -130,9 +130,5 @@ def vistahttps() -> rx.Component:
             ),
 
             style = rejilla.rejilla,
-            
-            margin_top = Tamanyo.T05.value,
-            margin_bottom = Tamanyo.T05.value,
-
         ),
 

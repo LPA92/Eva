@@ -61,7 +61,8 @@ from .valores import Texto as Tamanyo
 from .valores import Separacion as Espacio
 # Importamos las diferentes pantallas
 # from .valores import Monitor as Monitor
-
+# Importamos los tamaños
+from Eva_Navarro.estilos.valores import Anchos as Ancho
 
     # Para establecer los puntos de interrupción para las diferentes pantallas (responsive)
     # xs =  60em, 33.75em ->   960 px ,   540 px
@@ -269,3 +270,33 @@ Pagina = dict(
     # Colocamos un relleno de 1.25em alrededor de la página
     padding=Tamanyo.T05.value
 )
+
+Privada = dict(
+    # Limitamos el ancho de la página a 80em definido en generico.py
+    max_width = MAX_ANCHO,
+    # limitamos el alto de la página a 45em definido en generico.py                    
+    max_height = MAX_ALTO,
+    # Para que ocupe el 100% lo que hay dentro del vstack
+    width="100%",
+    # Dejamos un margen de 1.25em en el eje y
+    # margin_y=Tamanyo.T05.value,
+    # Colocamos un relleno de 1.25em alrededor de la página
+    padding=Tamanyo.T05.value
+)
+
+Centrado = dict(
+    direction = 'column',
+    justify = 'center',
+    align = 'center'
+)
+
+
+
+Seccion = {
+    'height': Ancho.A06.value,
+    'width': '100%',
+    'margin': 'auto',
+    # Separación vertical
+#    'spacing':Espacio.XXS.value 
+}
+

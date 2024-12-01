@@ -39,6 +39,30 @@ texto_navbar = dict(
     # display=["flex", "flex", "flex", "flex", "flex"],
 )
 
+# Texto de la barra de navegación
+# dict = Diccionario
+texto_pulsa = dict(
+    # Tipo de fuente
+    font_family = Fuente.LOGO.value,
+    # Peso de la fuente
+    font_weight = Trazo.NEGRITA.value,
+    # Definimos el tamaño del texto en función de la pantalla
+    font_size = rx.breakpoints(
+        initial=Texto.T04.value,
+        xs=Texto.T05.value,
+        sm=Texto.T06.value,
+        md=Texto.T07.value,
+        lg=Texto.T08.value,
+        xl=Texto.T09.value,
+    ),
+    # Color del texto
+    color = TextoColor.NAV.value,
+    # El texto ocupa el 100% de la pantalla
+    # width = '100%',
+    # Para cambiar los tamaños de la letra en función de la pantalla
+    # display=["flex", "flex", "flex", "flex", "flex"],
+)
+
 # Texto en negrita para la vista inicio
 negrita = dict(
     # Definimos el tipo de fuente
@@ -171,7 +195,7 @@ texto_honorarios = dict(
         xs = Texto.T03.value,
         sm = Texto.T04.value,
         md = Texto.T05.value,
-        lg = Texto.T16.value,
+        lg = Texto.T06.value,
         xl = Texto.T07.value,
     ),  
     color = TextoColor.CABEZA.value,

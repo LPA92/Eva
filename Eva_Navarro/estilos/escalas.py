@@ -39,12 +39,12 @@ escala_icono = dict(
 escala_inicio = dict(
 
     width = rx.breakpoints(
-        initial = Imagen.I13.value,
-        xs = Imagen.I13.value,
-        sm = Imagen.I15.value,
-        md = Imagen.I15.value,
-        lg = Imagen.I16.value,
-        xl = Imagen.I17.value,
+        initial = Imagen.I08.value,
+        xs = Imagen.I09.value,
+        sm = Imagen.I10.value,
+        md = Imagen.I11.value,
+        lg = Imagen.I12.value,
+        xl = Imagen.I13.value,
     ),
     height = 'auto',
     display=["flex", "flex", "flex", "flex", "flex"],  
@@ -68,12 +68,41 @@ escala_servicio = dict(
 escala_partido = dict(
 
     width = rx.breakpoints(
-        initial = Imagen.I08.value,
-        xs = Imagen.I09.value,
-        sm = Imagen.I10.value,
-        md = Imagen.I11.value,
-        lg = Imagen.I12.value,
-        xl = Imagen.I13.value,
+        initial = Imagen.I05.value,
+        xs = Imagen.I06.value,
+        sm = Imagen.I07.value,
+        md = Imagen.I08.value,
+        lg = Imagen.I09.value,
+        xl = Imagen.I10.value,
+    ),
+    height = 'auto',
+    display=["flex", "flex", "flex", "flex", "flex"],   
+)
+
+# Escala para la imagen de la vista partidos
+escala_login = dict(
+
+    width = rx.breakpoints(
+        initial = Imagen.I10.value,
+        xs = Imagen.I10.value,
+        sm = Imagen.I11.value,
+        md = Imagen.I12.value,
+        lg = Imagen.I13.value,
+        xl = Imagen.I14.value,
+    ),
+    height = 'auto',
+    display=["flex", "flex", "flex", "flex", "flex"],   
+)
+
+escala_imagen = dict(
+
+    width = rx.breakpoints(
+        initial = Imagen.I04.value,
+        xs = Imagen.I04.value,
+        sm = Imagen.I05.value,
+        md = Imagen.I05.value,
+        lg = Imagen.I06.value,
+        xl = Imagen.I06.value,
     ),
     height = 'auto',
     display=["flex", "flex", "flex", "flex", "flex"],   
@@ -98,12 +127,12 @@ escala_honorarios = dict(
 escala_https = dict(
 
     width = rx.breakpoints(
-        initial = Imagen.I02.value,
-        xs = Imagen.I03.value,
-        sm = Imagen.I04.value,
-        md = Imagen.I05.value,
-        lg = Imagen.I06.value,
-        xl = Imagen.I08.value,
+        initial = Imagen.I05.value,
+        xs = Imagen.I05.value,
+        sm = Imagen.I06.value,
+        md = Imagen.I06.value,
+        lg = Imagen.I07.value,
+        xl = Imagen.I07.value,
     ),
     height = 'auto',
     display=["flex", "flex", "flex", "flex", "flex"],    
@@ -126,6 +155,21 @@ escala_pie = dict(
 
 # Escala para las imagenes para el área privada
 escala_privada = dict(
+
+    width = rx.breakpoints(
+        initial = Imagen.I04.value,
+        xs = Imagen.I05.value,
+        sm = Imagen.I06.value,
+        md = Imagen.I07.value,
+        lg = Imagen.I08.value,
+        xl = Imagen.I09.value,
+    ),
+    height = 'auto',
+    display=["flex", "flex", "flex", "flex", "flex"],   
+)
+
+# Escala para las imagenes para el área privada
+escala_login = dict(
 
     width = rx.breakpoints(
         initial = Imagen.I01.value,

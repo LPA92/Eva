@@ -104,6 +104,4 @@ def vistapartido() -> rx.Component:
             vertical_items = 'center',
         ),
         style = comun.Flexible,                
-        margin_top = Tamanyo.T07.value,
-        margin_bottom = Tamanyo.T08.value,
     )
